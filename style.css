@@ -1,0 +1,63 @@
+.card {
+  margin: 50px auto;
+  max-width: 900px;
+  position: relative;
+
+  /* card holo parent tai ei rotate er perspective card ei add korte hobe: */
+  perspective: 1500px;
+}
+
+.card__side {
+  /*ekhonfront-cardandbackcardkecollapsekorbo:;
+    */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: all 1s;
+
+  /* back er card ti jate first e mane e hover korar age jate show nah kore tar jonne: */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+}
+
+.card__side--front {
+  background-color: #333;
+  height: 50vh;
+  width: 50vw;
+}
+
+.card__side--back {
+  background-color: blue;
+  height: 50vh;
+  width: 50vw;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+}
+
+.card:hover .card__side--front {
+  transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+}
+
+.card:hover .card__side--back {
+  transform: rotateY(0);
+  -webkit-transform: rotateY(0);
+  -moz-transform: rotateY(0);
+  -ms-transform: rotateY(0);
+  -o-transform: rotateY(0);
+}
+
+.card--front-img {
+  text-align: center;
+}
